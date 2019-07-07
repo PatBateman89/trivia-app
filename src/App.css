@@ -79,34 +79,34 @@ html, body {
 
 .Footer {
   grid-area: f;
-  margin-bottom: 8px;
   background-color: #e17055;
 }
 
 .Wrong {
   grid-area: w;
-  margin-bottom: 8px;
   background-color: #78C257;
+  overflow: hidden;
 }
 
 .Wrong:hover {
   opacity: 0.85;
   transition: 0.4s;
-  font-size: 2.1em;
   cursor: pointer;
+  overflow: hidden;
+  transform: scale3d(1.03,1.03,1.03);
 }
 
 .Correct {
   grid-area: p;
-  margin-bottom: 8px;
   background-color: #FFB900;
 }
 
 .Correct:hover {
   opacity: 0.85;
   transition: 0.4s;
-  font-size: 2.1em;
   cursor: pointer;
+  overflow: hidden;
+  transform: scale3d(1.03,1.03,1.03);
 }
 
 .Trivia-Button {
@@ -117,8 +117,9 @@ html, body {
 .Trivia-Button:hover {
   opacity: 0.85;
   transition: 0.4s;
-  font-size: 2.1em;
   cursor: pointer;
+  overflow: hidden;
+  transform: scale3d(1.03,1.03,1.03);
 }
 
 .Answer-Button {
@@ -129,8 +130,9 @@ html, body {
 .Answer-Button:hover {
   opacity: 0.85;
   transition: 0.4s;
-  font-size: 2.1em;
   cursor: pointer;
+  overflow: hidden;
+  transform: scale3d(1.03,1.03,1.03);
 }
 
 .hide {

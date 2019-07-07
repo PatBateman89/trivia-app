@@ -6,7 +6,7 @@ const Question = (props) => (
     className='Trivia-Button'
     onClick={props.onClick}
   >
-    Question
+  New Question
   </div>
 )
 
