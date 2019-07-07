@@ -160,11 +160,38 @@ html, body {
   background-color: #ee5253;
 }
 
-.hide {
-  display: none;
+@media (max-width: 480px) {
+  body {
+    font-size: 9px;
+  }
+
+  .Menu {
+    display: none;
+    visibility: collapse;
+    position: absolute;
+    top: -9999999px;
+    left: -99999999px;
+  }
+
+  .container {
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "h h h h h h h h h h h h"
+      "n n n n n n s s s s s s"
+      "n n n n n n s s s s s s"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "w w w w f f f f p p p p";
+  }
+
 }
 
-@media (max-width: 680px) {
+@media (min-width: 680px) {
   body {
     font-size: 9px;
   }
@@ -187,7 +214,7 @@ html, body {
 
 }
 
-@media (min-width: 680px) {
+@media (min-width: 480px) {
   body {
     font-size: 9px;
   }
