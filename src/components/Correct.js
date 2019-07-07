@@ -2,7 +2,7 @@ import React from 'react'
 
 const Correct = (props) => (
   <div
-    className="Correct"
+    className={props.className}
     onClick={props.onClick}
   >
   Correct

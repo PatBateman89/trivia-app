@@ -59,6 +59,8 @@ html, body {
 .Menu {
   grid-area: m;
   background-color: #a29bfe;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .Content {
@@ -82,57 +84,79 @@ html, body {
   background-color: #e17055;
 }
 
-.Wrong {
+.Wrong{
   grid-area: w;
   background-color: #78C257;
   overflow: hidden;
-}
-
-.Wrong:hover {
   opacity: 0.85;
   transition: 0.4s;
   cursor: pointer;
   overflow: hidden;
-  transform: scale3d(1.03,1.03,1.03);
+  transform: scale3d(.95,.95,.95);
+}
+
+.Wrong-off {
+  grid-area: w;
+  background-color: #78C257;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .Correct {
   grid-area: p;
   background-color: #FFB900;
-}
-
-.Correct:hover {
+  overflow: hidden;
   opacity: 0.85;
   transition: 0.4s;
   cursor: pointer;
   overflow: hidden;
-  transform: scale3d(1.03,1.03,1.03);
+  transform: scale3d(.95,.95,.95);
+}
+
+.Correct-off {
+  grid-area: p;
+  background-color: #FFB900;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .Trivia-Button {
   grid-area: n;
   background-color: #341f97;
-}
-
-.Trivia-Button:hover {
+  overflow: hidden;
   opacity: 0.85;
   transition: 0.4s;
   cursor: pointer;
   overflow: hidden;
-  transform: scale3d(1.03,1.03,1.03);
+  transform: scale3d(.95,.95,.95);
+}
+
+.Trivia-Button-Off {
+  grid-area: n;
+  background-color: #341f97;
+  overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .Answer-Button {
   grid-area: s;
   background-color: #ee5253;
-}
-
-.Answer-Button:hover {
   opacity: 0.85;
   transition: 0.4s;
   cursor: pointer;
   overflow: hidden;
-  transform: scale3d(1.03,1.03,1.03);
+  transform: scale3d(.95,.95,.95);
+}
+
+.Answer-Button-Off {
+  transition: 0.4s;
+  cursor: pointer;
+  overflow: hidden;
+  grid-area: s;
+  background-color: #ee5253;
 }
 
 .hide {
@@ -141,7 +165,7 @@ html, body {
 
 @media (max-width: 680px) {
   body {
-    font-size: 11px;
+    font-size: 9px;
   }
 
   .container {

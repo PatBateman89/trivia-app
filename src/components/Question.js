@@ -3,7 +3,7 @@ import React from 'react';
 
 const Question = (props) => (
   <div
-    className='Trivia-Button'
+    className={props.className}
     onClick={props.onClick}
   >
   New Question

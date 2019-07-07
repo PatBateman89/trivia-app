@@ -16,54 +16,80 @@ class App extends React.Component {
 
   state = {
     question: '',
-    answer: '',
+    correct_answer: '',
+    answers: [],
+    list: [],
     category: '',
     toggle: true,
-    score: 0
+    score: 0,
+    isWrongSwitchOn: false,
+    isCorrectSwitchOn: false,
+    isAnswerOn: false,
+    isQuestionOn: false
   }
 
   getTrivia = async (event) => {
     event.preventDefault();
-    const api_key = process.env.REACT_APP_API_KEY
-    const api_call = await fetch(`https://jservice.io/api/${api_key}`);
+    // const api_key = process.env.REACT_APP_API_KEY
+    const api_call = await fetch(`https://opentdb.com/api.php?amount=1&type=multiple`);
     const data = await api_call.json();
-    console.log(data)
+    console.log(data);
     this.setState({
-      question: data[0].question,
-      answer: data[0].answer,
-      category: data[0].category.title,
-      toggle: true
+      question: data.results[0].question.replace(/&quot;/g, '"').replace(/&#039;/g, `'`).replace(/&amp;/g, '&'),
+      correct_answer: data.results[0].correct_answer,
+      category: data.results[0].category,
+      answers: data.results[0].incorrect_answers,
+      toggle: true,
+      list: [data.results[0].incorrect_answers[0], data.results[0].incorrect_answers[1],data.results[0].incorrect_answers[2], data.results[0].correct_answer],
+      isQuestionOn: !this.state.isQuestionOn
     })
+    setTimeout(() => {
+      this.setState({
+        isQuestionOn: !this.state.isQuestionOn
+      })
+    }, 350)
   }
 
   handleAnswer = () => {
-    if (this.state.toggle === true) {
+    this.setState({
+      toggle: !this.state.toggle,
+      isAnswerOn: !this.state.isAnswerOn
+    })
+    setTimeout(() => {
       this.setState({
-        toggle: false
+        isAnswerOn: !this.state.isAnswerOn
       })
-    } else {
-      this.setState({
-        toggle: true
-      })
-    }
+    }, 350)
   }
 
   handleWrong = (event) => {
     event.preventDefault();
     this.setState((prevState) => {
       return {
-        score: prevState.score - 1
+        score: prevState.score - 1,
+        isWrongSwitchOn: !this.state.isWrongSwitchOn
       }
     })
+    setTimeout(() => {
+      this.setState({
+        isWrongSwitchOn: !this.state.isWrongSwitchOn
+      })
+    }, 350)
   }
 
   handleCorrect = (event) => {
     event.preventDefault();
     this.setState((prevState) => {
       return {
-        score: prevState.score + 1
+        score: prevState.score + 1,
+        isCorrectSwitchOn: !this.state.isCorrectSwitchOn
       }
     })
+    setTimeout(() => {
+      this.setState({
+        isCorrectSwitchOn: !this.state.isCorrectSwitchOn
+      })
+    }, 350)
   }
 
 
@@ -73,11 +99,11 @@ class App extends React.Component {
         <div className="container">
           <Title className="Header" />
           <Question
-            className="Trivia-Button"
+            className={this.state.isQuestionOn ? "Trivia-Button" : "Trivia-Button-Off"}
             onClick={this.getTrivia}
             />
           <Answer
-            className="Answer-Button"
+            className={this.state.isAnswerOn ? "Answer-Button" : "Answer-Button-Off"}
             onClick={this.handleAnswer}
           />
           <Menu
@@ -87,19 +113,21 @@ class App extends React.Component {
           <Content
             className='Content'
             question={this.state.question}
-            answer={this.state.answer}
+            correct_answer={this.state.correct_answer}
             toggle={this.state.toggle}
+            answers={this.state.answers}
+            list={this.state.list}
           />
           <Footer
             className="Footer"
             score={this.state.score}
           />
           <Wrong
-            className="Wrong"
+            className={this.state.isWrongSwitchOn ? "Wrong" : "Wrong-off"}
             onClick={this.handleWrong}
           />
           <Correct
-            className="Wrong"
+            className={this.state.isCorrectSwitchOn ? "Correct" : "Correct-off"}
             onClick={this.handleCorrect}
           />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Answer = (props) => (
   <div
-    className="Answer-Button"
+    className={props.className}
     onClick={props.onClick}
   >
     Answer
