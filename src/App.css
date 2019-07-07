@@ -61,6 +61,7 @@ html, body {
   background-color: #a29bfe;
   word-wrap: break-word;
   overflow: hidden;
+  padding: 10px;
 }
 
 .Content {
@@ -184,4 +185,71 @@ html, body {
       "w w w w f f f f p p p p";
   }
 
+}
+
+@media (min-width: 680px) {
+  body {
+    font-size: 9px;
+  }
+
+  .container {
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "h h h h h h h h h h h h"
+      "n n n n m m m m s s s s"
+      "n n n n m m m m s s s s"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "w w w w f f f f p p p p";
+  }
+
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "h h h h h h h h h h h h"
+      "n n n n m m m m s s s s"
+      "n n n n m m m m s s s s"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "w w w w f f f f p p p p";
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    grid-template-areas:
+    "h h h h h h h h h h h h"
+    "h h h h h h h h h h h h"
+    "n n c c c c c c c c c c"
+    "n n c c c c c c c c c c"
+    "n n c c c c c c c c c c"
+    "s s c c c c c c c c c c"
+    "s s c c c c c c c c c c"
+    "s s c c c c c c c c c c"
+    "m m c c c c c c c c c c"
+    "m m c c c c c c c c c c"
+    "m m c c c c c c c c c c"
+    "w w f f f f f f f f p p";
+  }
 }
