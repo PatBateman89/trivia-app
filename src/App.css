@@ -1,33 +1,161 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.wrapper {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+}
+
+.question {
+  font-size: 3em;
   color: white;
+  margin: 10px 50px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+html, body {
+  margin: 10px;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "h h h h h h h h h h h h"
+      "n n c c c c c c c c c c"
+      "n n c c c c c c c c c c"
+      "n n c c c c c c c c c c"
+      "s s c c c c c c c c c c"
+      "s s c c c c c c c c c c"
+      "s s c c c c c c c c c c"
+      "m m c c c c c c c c c c"
+      "m m c c c c c c c c c c"
+      "m m c c c c c c c c c c"
+      "w w f f f f f f f f p p";
+    height: 95vh;
+    text-align: center;
+}
+
+.Header {
+  grid-area: h;
+  background-color: #55efc4;
+}
+
+.Menu {
+  grid-area: m;
+  background-color: #a29bfe;
+}
+
+.Content {
+  grid-area: c;
+  height: 100%;
+  width: 100%;
+  background-color: #0984e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-family: Libre;
+}
+
+.Content h2 {
+  padding: 40px;
+}
+
+.Footer {
+  grid-area: f;
+  margin-bottom: 8px;
+  background-color: #e17055;
+}
+
+.Wrong {
+  grid-area: w;
+  margin-bottom: 8px;
+  background-color: #78C257;
+}
+
+.Wrong:hover {
+  opacity: 0.85;
+  transition: 0.4s;
+  font-size: 2.1em;
+  cursor: pointer;
+}
+
+.Correct {
+  grid-area: p;
+  margin-bottom: 8px;
+  background-color: #FFB900;
+}
+
+.Correct:hover {
+  opacity: 0.85;
+  transition: 0.4s;
+  font-size: 2.1em;
+  cursor: pointer;
+}
+
+.Trivia-Button {
+  grid-area: n;
+  background-color: #341f97;
+}
+
+.Trivia-Button:hover {
+  opacity: 0.85;
+  transition: 0.4s;
+  font-size: 2.1em;
+  cursor: pointer;
+}
+
+.Answer-Button {
+  grid-area: s;
+  background-color: #ee5253;
+}
+
+.Answer-Button:hover {
+  opacity: 0.85;
+  transition: 0.4s;
+  font-size: 2.1em;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "h h h h h h h h h h h h"
+      "n n n n m m m m s s s s"
+      "n n n n m m m m s s s s"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "c c c c c c c c c c c c"
+      "w w w w f f f f p p p p";
   }
+
 }
