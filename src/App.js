@@ -24,7 +24,8 @@ class App extends React.Component {
 
   getTrivia = async (event) => {
     event.preventDefault();
-    const api_call = await fetch(`https://jservice.io/api/random`);
+    const api_key = process.env.REACT_APP_API_KEY
+    const api_call = await fetch(`http://jservice.io/api/${api_key}`);
     const data = await api_call.json();
     console.log(data)
     this.setState({
