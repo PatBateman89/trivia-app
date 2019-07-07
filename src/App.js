@@ -36,7 +36,7 @@ class App extends React.Component {
     console.log(data);
     this.setState({
       question: data.results[0].question.replace(/&quot;/g, '"').replace(/&#039;/g, `'`).replace(/&amp;/g, '&'),
-      correct_answer: data.results[0].correct_answer,
+      correct_answer: data.results[0].correct_answer.replace(/&quot;/g, '"').replace(/&#039;/g, `'`).replace(/&amp;/g, '&'),
       category: data.results[0].category,
       answers: data.results[0].incorrect_answers,
       toggle: true,
