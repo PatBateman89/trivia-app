@@ -5,7 +5,7 @@ const Answer = (props) => (
     className={props.className}
     onClick={props.onClick}
   >
-    Answer
+    Answer:
   </div>
 )
 
