@@ -1,3 +1,14 @@
+# React Trivia App
+
+A fun project I created to help my pub trivia team and I warm up before games.  It utilizes an API that randomly selects a trivia question for the user to answer.  
+
+<br>
+
+__[Live Demo](https://triva-app-eric-react.herokuapp.com/)__
+
+<img src="demo.gif" width="40%">
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
